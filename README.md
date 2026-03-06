@@ -6,7 +6,7 @@ A responsive web application that allows users to search for and track IP addres
 
 ## Live Demo
 
-[Live Demo](https://luminous-pegasus-3bba91.netlify.app/)
+[Live Demo](https://thunderous-jelly-8a0108.netlify.app/)
 
 ##
 
