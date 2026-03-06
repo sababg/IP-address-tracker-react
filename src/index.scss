@@ -1,0 +1,63 @@
+@use "sass:color";
+
+$font-stack: "Rubik", sans-serif;
+
+$dark-gray-color: hsl(0, 0%, 59%);
+$very-dark-gray-color: hsl(0, 0%, 17%);
+$blue-color: hsl(228, 45%, 44%);
+$white-color: #fff;
+$black-color-100: rgba(0, 0, 0, 0.1);
+
+$bg-desktop: url("./assets/images/pattern-bg-desktop.png");
+$bg-mobile: url("./assets/images/pattern-bg-mobile.png");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  font: 100% $font-stack;
+  font-size: 1.125rem;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+main {
+  position: relative;
+  @media (max-width: 1400px) {
+    height: 57%;
+  }
+  @media (max-width: 768px) {
+    height: 62%;
+  }
+}
+
+#map {
+  width: 100%;
+  height: calc(97vh - calc(100vw / (16 / 3)));
+  z-index: 1;
+
+  @media (max-width: 1200px) {
+    height: 100%;
+  }
+  @media (max-width: 768px) {
+    height: 100%;
+  }
+}
+
+.attribution {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
