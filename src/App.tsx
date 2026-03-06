@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import { API_KEY } from "../apiKey";
+// import { API_KEY } from "../apiKey";
 import Header from "./components/header/Header";
 import { useFetch } from "./components/hook/useFetch";
 import InfoCard from "./components/infoCard/InfoCard";
@@ -7,17 +7,19 @@ import { MapView } from "./components/MapView";
 import type { Data } from "./components/types/types";
 import Loading from "./components/utils/Loading";
 
+const GEO_API_KEY = import.meta.env.VITE_GEO_API_KEY as string | undefined;
+
 export default function App() {
   const [searchedValue, setSearchedValue] = useState("");
 
   const URL = useMemo(() => {
     if (searchedValue.trim() === "") {
-      return `https://geo.ipify.org/api/v2/country,city?apiKey=${API_KEY}`;
+      return `https://geo.ipify.org/api/v2/country,city?apiKey=${GEO_API_KEY}`;
     }
     if (searchedValue.trim().includes(".com")) {
-      return `https://geo.ipify.org/api/v2/country,city?apiKey=${API_KEY}&&domain=${searchedValue.trim()}`;
+      return `https://geo.ipify.org/api/v2/country,city?apiKey=${GEO_API_KEY}&&domain=${searchedValue.trim()}`;
     } else {
-      return `https://geo.ipify.org/api/v2/country,city?apiKey=${API_KEY}&&ipAddress=${searchedValue.trim()}`;
+      return `https://geo.ipify.org/api/v2/country,city?apiKey=${GEO_API_KEY}&&ipAddress=${searchedValue.trim()}`;
     }
   }, [searchedValue]);
 
